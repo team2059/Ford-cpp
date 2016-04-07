@@ -24,14 +24,6 @@ class Ford: public IterativeRobot {
   /**
    * @brief The 4-motor mecanum Drivetrain
    */
-  static Drivetrain* drivetrain;
-  /**
-   * @brief The Pneumatics system
-   */
-  static Pneumatics* pneumatics;
-  /**
-   * @brief The Autonomous command
-   */
   static CommandGroup* aut;
   /**
    * @brief Initializes the robot
