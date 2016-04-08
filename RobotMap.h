@@ -19,7 +19,8 @@
 //Misc variables
 #define MAINARM_PRESET_COLLECT 0
 #define MAINARM_PRESET_TRAVERSE 5
-#define MAINARM_PRESET_SHOOT 90
+#define MAINARM_PRESET_SHOOT_CLOSE 95
+#define MAINARM_PRESET_SHOOT_FAR 85
 
 #endif
 // vim: ts=2:sw=2:et

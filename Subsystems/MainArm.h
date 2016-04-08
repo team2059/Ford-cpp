@@ -18,7 +18,8 @@ class MainArm: public PIDSubsystem {
 
   static constexpr double COLLECT = MAINARM_PRESET_COLLECT;
   static constexpr double TRAVERSE = MAINARM_PRESET_TRAVERSE;
-  static constexpr double SHOOT = MAINARM_PRESET_SHOOT;
+  static constexpr double SHOOT_CLOSE= MAINARM_PRESET_SHOOT_CLOSE;
+//static constexpr double SHOOT_FAR= MAINARM_PRESET_SHOOT_FAR;
 
   /**
    * @brief Constructs the MainArm

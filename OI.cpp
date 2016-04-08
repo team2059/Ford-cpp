@@ -1,6 +1,7 @@
 #include "OI.h"
 #include "Commands/MainArm/CollectPreset.h"
 #include "Commands/MainArm/TraversePreset.h"
+#include "Commands/MainArm/ShootPreset.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
@@ -13,8 +14,10 @@ OI::OI() {
 
   //Armstick
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
+  JoystickButton *right4 = new JoystickButton(rightStick, 4);
   JoystickButton *right5 = new JoystickButton(rightStick, 5);
   right3->WhileHeld(new TraversePreset());
+  right4->WhileHeld(new ShootPreset());
   right5->WhileHeld(new CollectPreset());
 }
 Joystick* OI::GetRightStick() {

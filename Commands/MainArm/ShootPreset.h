@@ -1,28 +1,28 @@
-#ifndef TRAVERSEPRESET_H
-#define TRAVERSEPRESET_H
+#ifndef SHOOTPRESET_H
+#define SHOOTPRESET_H
 
 #include "Commands/Command.h"
 #include "WPILib.h"
 
 /**
- * @brief Moves the arm to the traverse preset
+ * @brief Moves the arm to one of the shoot presets
  */
-class TraversePreset: public Command {
+class ShootPreset: public Command {
  private:
  public:
   /**
-   * @brief Constructs TraversePreset
+   * @brief Constructs ShootPreset
    *
    * @param timeout Timeout in seconds (default: 5)
    *
    */
-  TraversePreset(double timeout = 5);
+  ShootPreset(double timeout = 5);
   /**
    * @brief Initializes the class
    */
   void Initialize();
   /**
-   * @brief Moves the arm to the traverse position
+   * @brief Moves the arm to the shoot position
    */
   void Execute();
   /**
