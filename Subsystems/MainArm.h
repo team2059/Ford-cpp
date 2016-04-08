@@ -46,6 +46,18 @@ class MainArm: public PIDSubsystem {
    * @param output of the PID loop
    */
   void UsePIDOutput(double output);
+  /**
+   * @brief converts the potentiometer voltage to degrees
+   *
+   * @param voltage of the potentiometer
+   */
+  double PotToDegrees(double volts);
+  /**
+	* @brief gets the raw pot voltage for debugging
+  *
+  * @return pot voltage
+  */
+	double GetRawPot();
 };
 #endif
 // vim: ts=2:sw=2:et

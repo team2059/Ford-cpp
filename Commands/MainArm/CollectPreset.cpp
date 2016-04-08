@@ -7,7 +7,6 @@ CollectPreset::CollectPreset(double timeout): Command("CollectPreset") {
 void CollectPreset::Initialize() {}
 void CollectPreset::Execute() {
   Ford::mainArm->SetSetpoint(Ford::mainArm->COLLECT);
-  Ford::oi->GetLeftThrottle();
 }
 bool CollectPreset::IsFinished() {
   if(!IsTimedOut()) {

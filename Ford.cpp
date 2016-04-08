@@ -30,6 +30,7 @@ void Ford::TeleopInit() {
 }
 void Ford::TeleopPeriodic() {
   Scheduler::GetInstance()->Run();
+  SmartDashboard::PutNumber("MainArm Pot", mainArm->GetRawPot());
 }
 void Ford::TestPeriodic() {}
 START_ROBOT_CLASS(Ford);
