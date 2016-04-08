@@ -6,5 +6,4 @@ cmake_install.cmake
 vision
 latex
 html
-Makefile
 FRCUserProgram
