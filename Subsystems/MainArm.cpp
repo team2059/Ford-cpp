@@ -6,10 +6,6 @@ MainArm::MainArm(): PIDSubsystem("MainArm",1.0,0.0,0.0) {
   armRightDriveMotor = new CANTalon(MAINARM_DRIVE_RIGHT);
   armPot = new AnalogInput(MAINARM_POT);
 
-  static const double COLLECT = MAINARM_PRESET_COLLECT;
-  static const double TRAVERSE = MAINARM_PRESET_TRAVERSE;
-  static const double SHOOT = MAINARM_PRESET_SHOOT;
-
   GetPIDController()->SetContinuous(false);
   SetSetpoint(TRAVERSE);
   Enable();
@@ -22,6 +18,8 @@ double MainArm::ReturnPIDInput(){
   return armPot->GetAverageVoltage();
 }
 void MainArm::UsePIDOutput(double output){
-  //Use output
+  //This isn't going to work
+  armLeftDriveMotor->Set(output);
+  armRightDriveMotor->Set(-output);
 }
 // vim: ts=2:sw=2:et

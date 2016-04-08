@@ -1,8 +1,18 @@
 #include "OI.h"
+#include "Commands/MainArm/CollectPreset.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
   rightStick = new Joystick(1);
+
+  //Drivestick
+
+
+
+
+  //Armstick
+  JoystickButton *right7 = new JoystickButton(rightStick, 7);
+  right7->WhenPressed(new CollectPreset());
 }
 Joystick* OI::GetRightStick() {
   return rightStick;

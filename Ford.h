@@ -2,6 +2,7 @@
 #define FORD_H
 #include "WPILib.h"
 #include "OI.h"
+#include "Subsystems/MainArm.h"
 #include "Commands/Autonomous/Autonomous.h"
 /**
  * @brief The Hitchhikers 2016 robot, Ford
@@ -21,6 +22,10 @@ class Ford: public IterativeRobot {
    * @brief The 2-joystick OI
    */
   static OI* oi;
+  /**
+   * @brief The 4-motor mecanum Drivetrain
+   */
+  static MainArm* mainArm;
   /**
    * @brief The 4-motor mecanum Drivetrain
    */

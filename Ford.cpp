@@ -4,8 +4,10 @@
 #include "Commands/Autonomous/Autonomous.h"
 CommandGroup* Ford::aut = NULL;
 OI* Ford::oi = NULL;
+MainArm* Ford::mainArm = NULL;
 Ford::Ford() {
   oi = new OI();
+  mainArm = new MainArm();
 }
 void Ford::RobotInit() {
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);

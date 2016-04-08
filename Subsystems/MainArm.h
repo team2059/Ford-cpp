@@ -3,6 +3,7 @@
 
 #include "WPILib.h"
 #include "Commands/PIDSubsystem.h"
+#include "../RobotMap.h"
 /**
  * @brief Controls the MainArm
  *
@@ -14,6 +15,11 @@ class MainArm: public PIDSubsystem {
            *armRightDriveMotor; //<<! Right drive motor for the arm
   AnalogInput *armPot; //<<! Pot used to get arm angle via a four bar linkage
  public:
+
+  static constexpr double COLLECT = MAINARM_PRESET_COLLECT;
+  static constexpr double TRAVERSE = MAINARM_PRESET_TRAVERSE;
+  static constexpr double SHOOT = MAINARM_PRESET_SHOOT;
+
   /**
    * @brief Constructs the MainArm
    */
