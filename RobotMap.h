@@ -3,48 +3,23 @@
 
 #include "WPILib.h"
 
-#define CODE_VERSION 2.1
+#define CODE_VERSION 0.1
 
-// Elevator
-#define ELEVATOR_CAN 11
-#define ELEVATOR_BOTTOM_DIO 9
-#define ELEVATOR_MIDDLE_DIO 8
-#define ELEVATOR_TOP_DIO 7
-#define ELEVATOR_ENCODERA 4
-#define ELEVATOR_ENCODERB 9
+/* This file contains all of the constants for initializing items on the robot
+ * (Talons, Solenoid, Compressor, etc)
+ * Left/Right is determined by looking at the robot from behind
+ */
 
-// BinElevator
-#define BINELEVATOR_LEFT_CAN 13
-#define BINELEVATOR_RIGHT_CAN 14
-#define BINELEVATOR_BOTTOM_DIO 6
-#define BINELEVATOR_TOP_DIO 12
-#define BINELEVATOR_ENCODERA 10
-#define BINELEVATOR_ENCODERB 11
+//MainArm
+#define MAINARM_POT 0
+#define MAINARM_DRIVE_LEFT 5
+#define MAINARM_DRIVE_RIGHT 6
 
-// Drivetrain
-#define DRIVE_FRONT_LEFT_CAN 8
-#define DRIVE_BACK_LEFT_CAN 8
-#define DRIVE_FRONT_RIGHT_CAN 4
-#define DRIVE_BACK_RIGHT_CAN 3
-#define DRIVE_GYRO_ANALOG 0
 
-// Collector
-#define COLLECTOR_RAMP_CAN 7
-#define COLLECTOR_LEFT_CAN 2
-#define COLLECTOR_BOTTOM_CAN 20
-#define COLLECTOR_RIGHT_CAN 10
-#define COLLECTOR_SONAR_ANALOG 3
-
-// BinCollector
-#define BINCOLLECTOR_RIGHT_CAN 6
-#define BINCOLLECTOR_LEFT_CAN 10
-
-//Pneumatics
-#define COMPRESSOR_PCM_CAN 12
-#define BINELEVATOR_SOLENOID_ONE   0
-#define BINELEVATOR_SOLENOID_TWO   1
-#define BINELEVATOR_SOLENOID_THREE 2
-#define BINELEVATOR_SOLENOID_FOUR 3
+//Misc variables
+#define MAINARM_PRESET_COLLECT 0
+#define MAINARM_PRESET_TRAVERSE 5
+#define MAINARM_PRESET_SHOOT 90
 
 #endif
 // vim: ts=2:sw=2:et
