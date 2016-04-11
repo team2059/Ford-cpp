@@ -4,6 +4,7 @@
 #include "OI.h"
 #include "Subsystems/MainArm.h"
 #include "Subsystems/Drivetrain.h"
+#include "Subsystems/Pneumatics.h"
 #include "Commands/Autonomous/Autonomous.h"
 /**
  * @brief The Hitchhikers 2016 robot, Ford
@@ -31,6 +32,10 @@ class Ford: public IterativeRobot {
    * @brief 4 cim west coast drive
    */
   static Drivetrain* drivetrain;
+  /**
+   * @brief pneumatics system
+   */
+  static Pneumatics* pneumatics;
   /**
    * @brief Autonomous command
    */

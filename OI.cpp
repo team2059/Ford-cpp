@@ -2,15 +2,15 @@
 #include "Commands/MainArm/CollectPreset.h"
 #include "Commands/MainArm/TraversePreset.h"
 #include "Commands/MainArm/ShootPreset.h"
+#include "Commands/Pneumatics/FireShooterPiston.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
   rightStick = new Joystick(1);
 
   //Drivestick
-
-
-
+  JoystickButton *left1 = new JoystickButton(leftStick, 1);
+  left1->WhileHeld(new FireShooterPiston());
 
   //Armstick
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
