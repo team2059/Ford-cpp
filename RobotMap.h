@@ -10,6 +10,12 @@
  * Left/Right is determined by looking at the robot from behind
  */
 
+//Drive
+#define DRIVE_LEFT_MOTOR_ONE 1
+#define DRIVE_LEFT_MOTOR_TWO 2
+#define DRIVE_RIGHT_MOTOR_ONE 3
+#define DRIVE_RIGHT_MOTOR_TWO 4
+
 //MainArm
 #define MAINARM_POT 0
 #define MAINARM_DRIVE_LEFT 5

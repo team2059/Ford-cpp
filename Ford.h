@@ -3,6 +3,7 @@
 #include "WPILib.h"
 #include "OI.h"
 #include "Subsystems/MainArm.h"
+#include "Subsystems/Drivetrain.h"
 #include "Commands/Autonomous/Autonomous.h"
 /**
  * @brief The Hitchhikers 2016 robot, Ford
@@ -23,11 +24,15 @@ class Ford: public IterativeRobot {
    */
   static OI* oi;
   /**
-   * @brief The 4-motor mecanum Drivetrain
+   * @brief The main arm of the robot
    */
   static MainArm* mainArm;
   /**
-   * @brief The 4-motor mecanum Drivetrain
+   * @brief 4 cim west coast drive
+   */
+  static Drivetrain* drivetrain;
+  /**
+   * @brief Autonomous command
    */
   static CommandGroup* aut;
   /**
