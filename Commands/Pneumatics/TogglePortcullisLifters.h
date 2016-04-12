@@ -7,16 +7,14 @@
 /**
  * @brief Extends/Retracts the portcullis lifters
  */
-class PortcullisLiftersExtended: public Command {
+class TogglePortcullisLifters: public Command {
  private:
    bool portState; //<<! State of the portcullis lifters
  public:
   /**
-   * @brief Constructs PortcullisLiftersExtended
-   *
-   * @param state sets if the lifters are extended
+   * @brief Constructs TogglePortcullisLifters
    */
-  PortcullisLiftersExtended(bool state);
+  TogglePortcullisLifters();
   /**
    * @brief Initializes the class
    */
