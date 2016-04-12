@@ -16,9 +16,9 @@ class MainArm: public PIDSubsystem {
   AnalogInput *armPot; //<<! Pot used to get arm angle via a four bar linkage
  public:
 
-  static constexpr double COLLECT = MAINARM_PRESET_COLLECT;
-  static constexpr double TRAVERSE = MAINARM_PRESET_TRAVERSE;
-  static constexpr double SHOOT_CLOSE= MAINARM_PRESET_SHOOT_CLOSE;
+  static constexpr double COLLECT = MAINARM_PRESET_COLLECT; //<<! Lowest "0" preset, used for collecting
+  static constexpr double TRAVERSE = MAINARM_PRESET_TRAVERSE; //<<! Slightly higher than collect, rests on physical stop
+  static constexpr double SHOOT_CLOSE= MAINARM_PRESET_SHOOT_CLOSE; //<<! Angle for shooting shots from the edge of the batter
 //static constexpr double SHOOT_FAR= MAINARM_PRESET_SHOOT_FAR;
 
   /**
