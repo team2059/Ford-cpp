@@ -1,4 +1,5 @@
 #include "DriveEncoder.h"
+#include "../Commands/Drivetrain/DriveEncoders.h"
 #include "../RobotMap.h"
 
 DriveEncoder::DriveEncoder(): Subsystem("DriveEncoder") {
@@ -13,6 +14,7 @@ DriveEncoder::DriveEncoder(): Subsystem("DriveEncoder") {
   leftWheelEncoderTarget = 0;
 }
 void DriveEncoder::InitDefaultCommand() {
+  SetDefaultCommand(new DriveEncoders());
 }
 void DriveEncoder::UpdateRightWheelEncoder(){
   if(rightWheelSensor->Get() != rightWheelLastState){
