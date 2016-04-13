@@ -7,11 +7,13 @@ OI* Ford::oi = NULL;
 Drivetrain* Ford::drivetrain = NULL;
 Pneumatics* Ford::pneumatics = NULL;
 MainArm* Ford::mainArm = NULL;
+DriveEncoder* Ford::driveencoder = NULL;
 Ford::Ford() {
   oi = new OI();
   mainArm = new MainArm();
   drivetrain = new Drivetrain();
   pneumatics = new Pneumatics();
+  driveencoder = new DriveEncoder();
 }
 void Ford::RobotInit() {
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);

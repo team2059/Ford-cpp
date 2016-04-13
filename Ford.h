@@ -5,6 +5,7 @@
 #include "Subsystems/MainArm.h"
 #include "Subsystems/Drivetrain.h"
 #include "Subsystems/Pneumatics.h"
+#include "Subsystems/DriveEncoder.h"
 #include "Commands/Autonomous/Autonomous.h"
 /**
  * @brief The Hitchhikers 2016 robot, Ford
@@ -32,6 +33,10 @@ class Ford: public IterativeRobot {
    * @brief 4 cim west coast drive
    */
   static Drivetrain* drivetrain;
+  /**
+   * @brief drivetrain encoders
+   */
+  static DriveEncoder* driveencoder;
   /**
    * @brief pneumatics system
    */
