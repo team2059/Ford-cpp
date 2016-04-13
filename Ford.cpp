@@ -17,6 +17,7 @@ Ford::Ford() {
 }
 void Ford::RobotInit() {
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);
+  SmartDashboard::PutNumber("AutoTicks", 0);
 }
 void Ford::DisabledPeriodic() {
   Scheduler::GetInstance()->Run();
