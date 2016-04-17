@@ -5,6 +5,7 @@
 #include "Commands/Pneumatics/FireShooterPiston.h"
 #include "Commands/Pneumatics/TogglePortcullisLifters.h"
 #include "Commands/Pneumatics/RetractArmPiston.h"
+#include "Commands/Shooter/Shoot.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
@@ -12,7 +13,9 @@ OI::OI() {
 
   //Drivestick
   JoystickButton *left1 = new JoystickButton(leftStick, 1);
+  JoystickButton *left5 = new JoystickButton(leftStick, 5);
   left1->WhileHeld(new FireShooterPiston());
+  left5->WhileHeld(new Shoot());
 
   //Armstick
   JoystickButton *right3 = new JoystickButton(rightStick, 3);
