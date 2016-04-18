@@ -7,7 +7,7 @@ MainArm::MainArm(): PIDSubsystem("MainArm",1.0,0.0,0.0) {
   armPot = new AnalogInput(MAINARM_POT);
 
   GetPIDController()->SetContinuous(false);
-  SetSetpoint(TRAVERSE);
+//  SetSetpoint(TRAVERSE);
   Enable();
 }
 void MainArm::InitDefaultCommand() {}
