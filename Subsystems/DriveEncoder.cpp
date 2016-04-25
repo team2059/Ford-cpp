@@ -21,17 +21,21 @@ void DriveEncoder::UpdateRightWheelEncoder(){
     rightWheelEncoderTicks++;
     rightWheelLastState = rightWheelSensor->Get();
   }
+  SmartDashboard::PutNumber("RightWheelTicks", rightWheelEncoderTarget);
 }
 void DriveEncoder::UpdateLeftWheelEncoder(){
   if(leftWheelSensor->Get() != leftWheelLastState){
     leftWheelEncoderTicks++;
     leftWheelLastState = leftWheelSensor->Get();
   }
+  SmartDashboard::PutNumber("LeftWheelTicks", leftWheelEncoderTicks);
 }
 void DriveEncoder::SetRightWheelEncoderTarget(int target){
+  SmartDashboard::PutNumber("RightWheelTarget", target);
   rightWheelEncoderTarget=target;
 }
 void DriveEncoder::SetLeftWheelEncoderTarget(int target){
+  SmartDashboard::PutNumber("LeftWheelTarget", target);
   leftWheelEncoderTarget=target;
 }
 int DriveEncoder::GetRightWheelEncoderTarget(){

@@ -20,6 +20,10 @@ Ford::Ford() {
 void Ford::RobotInit() {
   SmartDashboard::PutNumber("CodeVersion", CODE_VERSION);
   SmartDashboard::PutNumber("AutoTicks", 0);
+  SmartDashboard::PutNumber("RightWheelTicks", 0);
+  SmartDashboard::PutNumber("LeftWheelTicks", 0);
+  SmartDashboard::PutNumber("RightWheelTarget", 0);
+  SmartDashboard::PutNumber("LeftWheelTarget", 0);
 }
 void Ford::DisabledPeriodic() {
   Scheduler::GetInstance()->Run();
