@@ -9,12 +9,9 @@
 class Pneumatics: public Subsystem {
  private:
   Compressor *compressor; //<! Compressor
-  Solenoid *shooterPistonSolenoidOne, //<! Solenoid one for the shooter piston
-           *shooterPistonSolenoidTwo, //<! Solenoid two for the shooter piston
-           *portcullisPistonSolenoidOne, //<! Solenoid one for the portcullis lifters
-           *portcullisPistonSolenoidTwo, //<! Solenoid two for the portcullis lifters
-           *armStopPistonSolenoidOne, //<! Solenoid one for the arm stop piston
-           *armStopPistonSolenoidTwo; //<! Solenoid two for the arm stop piston
+  DoubleSolenoid *shooterPistonSolenoid, //<! Solenoid for the shooter piston
+                 *portcullisPistonSolenoid, //<! Solenoid for the portcullis lifters
+                 *armStopPistonSolenoid; //<! Solenoid for the arm stop piston
   bool shooterState, //<! State of the shooter piston
        portcullisState, //<! State of the portcullis lifters
        armStopState; //<! State of the arm stop

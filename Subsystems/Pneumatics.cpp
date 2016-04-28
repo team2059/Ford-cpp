@@ -3,30 +3,36 @@
 
 Pneumatics::Pneumatics(): Subsystem("Pneumatics") {
   compressor = new Compressor(COMPRESSOR_PCM_CAN);
-  shooterPistonSolenoidOne = new Solenoid(SHOOTER_PISTON_SOLENOID_ONE);
-  shooterPistonSolenoidTwo = new Solenoid(SHOOTER_PISTON_SOLENOID_TWO);
-  portcullisPistonSolenoidOne = new Solenoid(PORTCULLIS_PISTON_SOLENOID_ONE);
-  portcullisPistonSolenoidTwo = new Solenoid(PORTCULLIS_PISTON_SOLENOID_TWO);
-  armStopPistonSolenoidOne = new Solenoid(ARM_STOP_PISTON_SOLENOID_ONE);
-  armStopPistonSolenoidTwo = new Solenoid(ARM_STOP_PISTON_SOLENOID_TWO);
+  shooterPistonSolenoid = new DoubleSolenoid(SHOOTER_PISTON_SOLENOID_ONE, SHOOTER_PISTON_SOLENOID_TWO);
+  portcullisPistonSolenoid = new DoubleSolenoid(PORTCULLIS_PISTON_SOLENOID_ONE, SHOOTER_PISTON_SOLENOID_TWO);
+  armStopPistonSolenoid = new DoubleSolenoid(ARM_STOP_PISTON_SOLENOID_ONE, ARM_STOP_PISTON_SOLENOID_TWO);
   shooterState = false;
   portcullisState = false;
   armStopState = true;
 }
 void Pneumatics::InitDefaultCommand() {}
 void Pneumatics::SetShooterPistonFired(bool state){
-  shooterPistonSolenoidOne->Set(state);
-  shooterPistonSolenoidTwo->Set(!state);
+  if(state){
+    shooterPistonSolenoid->Set(DoubleSolenoid::kForward);
+  }else{
+    shooterPistonSolenoid->Set(DoubleSolenoid::kReverse);
+  }
   shooterState=state;
 }
 void Pneumatics::SetPortcullisLiftersOut(bool state){
-  portcullisPistonSolenoidOne->Set(state);
-  portcullisPistonSolenoidTwo->Set(!state);
+  if(state){
+    portcullisPistonSolenoid->Set(DoubleSolenoid::kForward);
+  }else{
+    portcullisPistonSolenoid->Set(DoubleSolenoid::kReverse);
+  }
   portcullisState=state;
 }
 void Pneumatics::SetArmStopPistonUp(bool state){
-  armStopPistonSolenoidOne->Set(state);
-  armStopPistonSolenoidTwo->Set(!state);
+  if(state){
+    armStopPistonSolenoid->Set(DoubleSolenoid::kForward);
+  }else{
+    armStopPistonSolenoid->Set(DoubleSolenoid::kReverse);
+  }
   armStopState=state;
 }
 void Pneumatics::SetCompressorEnabled(bool state) {
