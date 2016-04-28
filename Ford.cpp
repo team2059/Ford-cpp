@@ -44,6 +44,7 @@ void Ford::TeleopInit() {
 void Ford::TeleopPeriodic() {
   Scheduler::GetInstance()->Run();
   SmartDashboard::PutNumber("MainArm Pot", mainArm->GetRawPot());
+  SmartDashboard::PutNumber("MainArm Degrees", mainArm->GetDegrees());
   SmartDashboard::PutBoolean("Portcullis lifters extended", pneumatics->GetPortcullisLiftersOut());
 }
 void Ford::TestPeriodic() {}

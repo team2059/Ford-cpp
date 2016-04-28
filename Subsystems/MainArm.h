@@ -30,12 +30,6 @@ class MainArm: public PIDSubsystem {
    */
   void InitDefaultCommand();
   /**
-   * @brief Moves the arm to a given angle
-   *
-   * @param angle the target angle of the arm
-   */
-  void MoveToAngle(double angle);
-  /**
    * @brief returns the PID input
    *
    * @return PID input
@@ -51,6 +45,12 @@ class MainArm: public PIDSubsystem {
    * @brief converts the potentiometer voltage to degrees
    *
    * @param volts voltage of the potentiometer
+   */
+  double GetDegrees();
+  /**
+   * @brief Gets the degrees of the arm
+   *
+   * @return the degrees of the arm
    */
   double PotToDegrees(double volts);
   /**

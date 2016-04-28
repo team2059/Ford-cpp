@@ -19,6 +19,8 @@
 #define DRIVE_LEFT_ENCODER 1
 
 //MainArm
+#define ZERO_DEGREES 0.1
+#define NINETY_DEGREES 0.7
 #define MAINARM_POT 0
 #define MAINARM_DRIVE_LEFT 5
 #define MAINARM_DRIVE_RIGHT 6

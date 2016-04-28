@@ -11,9 +11,6 @@ MainArm::MainArm(): PIDSubsystem("MainArm",1.0,0.0,0.0) {
   Enable();
 }
 void MainArm::InitDefaultCommand() {}
-void MainArm::MoveToAngle(double angle){
-  //code goes here
-}
 double MainArm::ReturnPIDInput(){
   return PotToDegrees(armPot->GetAverageVoltage());
 }
@@ -23,15 +20,10 @@ void MainArm::UsePIDOutput(double output){
   armRightDriveMotor->Set(-output);
 }
 double MainArm::PotToDegrees(double volts){
-  //numbers off of Zaphod's pot
-  //needs to be recalibrated
-  float max = -.0003948;
-  float min = 5.0245547;
-  float tmp = volts - max;
-  min = min - max; // ~5.0027
-  //important
-  max = max - max; //=0
-  return 300 - ((tmp + max) * (300 / min));
+  return 300-((volts-NINETY_DEGREES)*(300/(ZERO_DEGREES-NINETY_DEGREES)));
+}
+double MainArm::GetDegrees(){
+  return PotToDegrees(GetRawPot());
 }
 double MainArm::GetRawPot(){
 	return armPot->GetAverageVoltage();
