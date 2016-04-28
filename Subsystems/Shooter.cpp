@@ -25,6 +25,6 @@ void Shooter::ShootAtSpeed(double speed){
   rightShooterMotor->SetControlMode(CANSpeedController::kPercentVbus);
 
   leftShooterMotor->Set(speed);
-  rightShooterMotor->Set(-speed);
+  rightShooterMotor->Set(speed);
 }
 // vim: ts=2:sw=2:et
