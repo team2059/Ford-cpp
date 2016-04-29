@@ -19,10 +19,10 @@ all : $(OBJECTS)
 clean:
 	$(CLEANSER) $(OBJECTS) bin/FRCUserProgram
 
-deploy:
+deploy: all
 	@$(READER) bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram && /usr/local/frc/bin/frcKillRobot.sh -r -t'
 
-debug:
+debug: all
 	@$(READER) bin/FRCUserProgram | ssh admin@$(REMOTEIP) '(rm /home/lvuser/FRCUserProgram)</dev/null;cat > /home/lvuser/FRCUserProgram;chmod a+x /home/lvuser/FRCUserProgram;/home/lvuser/run.sh'
 
 putkey:
