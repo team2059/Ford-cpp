@@ -44,12 +44,13 @@ class MainArm: public PIDSubsystem {
   /**
    * @brief converts the potentiometer voltage to degrees
    *
-   * @param volts voltage of the potentiometer
+   * @return the degrees of the potentiometer
    */
   double GetDegrees();
   /**
    * @brief Gets the degrees of the arm
    *
+   * @param volts raw voltage from the potentiometer
    * @return the degrees of the arm
    */
   double PotToDegrees(double volts);
