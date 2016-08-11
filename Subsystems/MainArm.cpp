@@ -12,12 +12,8 @@ MainArm::MainArm(): PIDSubsystem("MainArm",1.0,0.0,0.0) {
 }
 void MainArm::InitDefaultCommand() {}
 double MainArm::ReturnPIDInput(){
-  return PotToDegrees(armPot->GetAverageVoltage());
 }
 void MainArm::UsePIDOutput(double output){
-  //This isn't going to work
-  armLeftDriveMotor->Set(output);
-  armRightDriveMotor->Set(-output);
 }
 double MainArm::PotToDegrees(double volts){
   return 300-((volts-NINETY_DEGREES)*(300/(ZERO_DEGREES-NINETY_DEGREES)));
@@ -27,5 +23,10 @@ double MainArm::GetDegrees(){
 }
 double MainArm::GetRawPot(){
 	return armPot->GetAverageVoltage();
+}
+
+void MainArm::SetPosition(double speed){
+  armLeftDriveMotor.Set(speed);
+  armRightDriveMotor.Set(-speed);
 }
 // vim: ts=2:sw=2:et

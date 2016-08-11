@@ -6,6 +6,7 @@
 #include "Commands/Pneumatics/TogglePortcullisLifters.h"
 #include "Commands/Pneumatics/RetractArmPiston.h"
 #include "Commands/Shooter/Shoot.h"
+#include "Commands/Shooter/SpinRollers.h"
 OI::OI() {
   // Joysticks
   leftStick = new Joystick(0);
@@ -13,8 +14,10 @@ OI::OI() {
 
   //Drivestick
   JoystickButton *left1 = new JoystickButton(leftStick, 1);
+  JoystickButton *left2 = new JoystickButton(leftStick, 2);
   JoystickButton *left5 = new JoystickButton(leftStick, 5);
   left1->WhileHeld(new FireShooterPiston());
+  left2->WhileHeld(new SpinRollers());
   left5->WhileHeld(new Shoot());
 
   //Armstick
